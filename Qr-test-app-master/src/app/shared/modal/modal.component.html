@@ -1,0 +1,20 @@
+<div class="modal-wrapper">
+  <form action="" [formGroup]="addStorageForm" style="display: inline-flex;flex-direction: column">
+
+    <mat-form-field *ngFor="let i of visibleCol">
+      <input formControlName="{{i.key}}" required type="{{i.type}}" matInput placeholder="{{i.key}}: ">
+    </mat-form-field>
+
+  </form>
+  <button mat-raised-button
+          *ngIf="data.method === 'add'"
+          (click)="storageModalAction('add')"
+          [disabled]="addStorageForm.invalid">
+    ADD STORAGE ITEM
+  </button>
+  <button mat-raised-button *ngIf="data.method === 'edit'"
+          (click)="storageModalAction('edit')"
+          [disabled]="addStorageForm.invalid">
+    EDIT STORAGE ITEM
+  </button>
+</div>

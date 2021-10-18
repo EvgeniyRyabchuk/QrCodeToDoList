@@ -1,0 +1,24 @@
+
+
+<form class="example-form" [formGroup]="form">
+    <mat-card [ngStyle]="{'background-color': isSelect == true ? 'rgb(126, 197, 255)' : 'white' }">
+      <mat-checkbox (change)="checked()" [(ngModel)]="isCheck" formControlName="isCheck">{{text}}</mat-checkbox>
+      <button type="button" (click)="openDialog('edit')">Edit</button>
+    </mat-card>
+</form>
+
+
+  <!-- <section class="example-section" [formGroup]="form">
+    <h4>You chose:</h4>
+    {{form.value | json}}
+  </section> -->
+
+
+
+
+
+
+
+
+
+

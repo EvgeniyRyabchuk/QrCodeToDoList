@@ -1,0 +1,15 @@
+
+<div class="todo-list-wrapper mat-card mat-elevation-z8">
+  <h1>TODO LIST</h1>
+  <button mat-raised-button (click)="openDialog('add')">ADD TODO</button>
+  <zxing-scanner (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
+
+  <div class="todo-wrapper">
+    <app-todo-item *ngFor="let item of arr" [id]="item.id" [text]="item.text" [isCheck]="item.isCheck" (click)="select(item)"></app-todo-item>
+  </div>
+
+  <qrcode *ngFor="let item of arr" [qrdata]="formatObj(item)" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+{{ arr | json }}
+
+</div>
+
